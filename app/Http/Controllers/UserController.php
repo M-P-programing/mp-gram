@@ -12,12 +12,31 @@ class UserController extends Controller
     }
 
     public function update(Request $request){
-        $id = \Auth::user()->id;
+        // Get identifued user
+        $user = \Auth::user();
+        $id = $user->id;
+        //Validate form
+        $validate = $this->validate($request,[
+            'name' => ['required', 'string', 'max:255'],
+            'surname' => ['required', 'string', 'max:255'],
+            'nick' => ['required', 'string', 'max:255', 'unique:users,nick,'.$id],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email,'.$id],
+        ]);
+        
         $name = $request->input('name');
-        $name = $request->input('surname');
-        $name = $request->input('nick');
-        $name = $request->input('email');
+        $surname = $request->input('surname');
+        $nick = $request->input('nick');
+        $email = $request->input('email');
         
-        
+        //Update user data
+        $user->name = $name;
+        $user->surname = $surname;
+        $user->nick = $nick;
+        $user->email = $email;
+
+        $user->update();
+
+        return redirect()->route('config')
+                         ->with(['message'=>'User updated correctly']);
     }
 }
