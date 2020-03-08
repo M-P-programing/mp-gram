@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
+
 
 
 class UserController extends Controller
@@ -12,6 +15,7 @@ class UserController extends Controller
     }
 
     public function update(Request $request){
+
         // Get identifued user
         $user = \Auth::user();
         $id = $user->id;
@@ -33,6 +37,17 @@ class UserController extends Controller
         $user->surname = $surname;
         $user->nick = $nick;
         $user->email = $email;
+
+        //Upoad image
+        $image_path = $request->file('image_path');
+        if($image_path){
+            // Put unique name to image
+            $image_path_name = time() . $image_path->getClientOriginalName();
+            // Save the image in storage folder
+            Storage::disk('users')->put($image_path_name, File::get($image_path));
+            // Set image name in object
+            $user->image = $image_path_name;
+        }
 
         $user->update();
 
