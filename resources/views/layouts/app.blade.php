@@ -51,10 +51,10 @@
                             @endif
                         @else
                         <li class="nav-item">
-                            <a class="nav-link" href="">Home</a>
+                            <a class="nav-link" href="{{'/'}}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">Upload image</a>
+                            <a class="nav-link" href="{{route('image.create')}}">Upload image</a>
                         </li>
                         <li class="nav-item">
                             @include('includes.avatar')
@@ -65,7 +65,7 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    
+
                                     <a class="dropdown-item" href="">
                                     {{ __('Profile') }}
                                     </a>

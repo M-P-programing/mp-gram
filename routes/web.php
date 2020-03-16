@@ -9,8 +9,7 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
-
+ */
 
 Auth::routes();
 
@@ -18,5 +17,5 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/config', 'UserController@config')->name('config');
 Route::post('/user/edit', 'UserController@update')->name('user.update');
 Route::get('/user/avatar/{filename}', 'UserController@getImage')->name('user.avatar');
-
-
+Route::get('/upload-image', 'ImageController@create')->name('image.create');
+Route::post('/image/save', 'ImageController@save')->name('image.save');
