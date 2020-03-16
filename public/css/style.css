@@ -52,4 +52,20 @@ form .avatar{
 
 .pub_image .description{
     padding: 20px;
+    padding-top:0px;
+}
+
+.pub_image .btn-comments{
+    background-color: #262121;
+    color: white;
+    font-weight: 400;
+}
+.likes{
+    padding: 20px;
+    padding-bottom:10px;
+}
+.likes img{
+    width: 20px;
+    padding-bottom: 0px;
+    padding-top: 10px;
 }

@@ -3,10 +3,9 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-10">
 
         @include('includes.message')
-        @foreach($images as $image)
             <div class="card pub_image">
                 <div class="card-header">
                     @if($image->user->image)
@@ -15,15 +14,13 @@
                         </div>
                     @endif
                     <div class="data-user">
-                        {{$image->user->name. ' '.$image->user->surname}}
-                        <span class="nickname"> {{' | @' . $image->user->nick}}</span>
+                    {{$image->user->name. ' '.$image->user->surname}}
+                    <span class="nickname"> {{' | @' . $image->user->nick}}</span>
                     </div>
                 </div>
                 <div class="card-body">
                     <div class="image-container">
-                    <a href="{{route('image.detail', ['id' => $image->id])}}">
-                        <img src="{{ route('image.file', ['filename' => $image->image_path])}}" alt="">
-                    </a>
+                    <img src="{{ route('image.file', ['filename' => $image->image_path])}}" alt="">
                     </div>
                 </div>
                 <div class="likes">
@@ -37,10 +34,6 @@
                     Comments ({{count($image->comments)}})
                 </a>
             </div>
-            @endforeach
-             <!-- PAGINATION-->
-        <div class="clearfix"></div>
-        {{$images->links()}}
         </div>
     </div>
 </div>
