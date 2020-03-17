@@ -55,6 +55,9 @@
                             <a class="nav-link" href="{{'/'}}">Home</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="{{'/likes'}}">Favorite images</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="{{route('image.create')}}">Upload image</a>
                         </li>
                         <li class="nav-item">
