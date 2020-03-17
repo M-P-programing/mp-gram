@@ -34,7 +34,7 @@
                     <span class="nickname date">{{' | ' . \FormatTime::LongTimeFilter($image->created_at)}}</span>
                     <p>{{$image->description}}</p>
                 </div>
-                <a href="" class="btn btn-comments">
+                <a href="{{route('image.detail', ['id' => $image->id])}}" class="btn btn-comments">
                     Comments ({{count($image->comments)}})
                 </a>
             </div>
