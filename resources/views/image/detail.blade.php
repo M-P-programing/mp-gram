@@ -6,7 +6,7 @@
         <div class="col-md-10">
 
         @include('includes.message')
-            <div class="card pub_image">
+            <div class="card pub_image pub_image_detail">
                 <div class="card-header">
                     @if($image->user->image)
                         <div class="container-avatar">
@@ -19,7 +19,7 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <div class="image-container">
+                    <div class="image-container image-detail">
                     <img src="{{ route('image.file', ['filename' => $image->image_path])}}" alt="">
                     </div>
                 </div>
@@ -30,9 +30,25 @@
                     <span class="nickname">{{'@'.$image->user->nick}}</span>
                     <p>{{$image->description}}</p>
                 </div>
-                <a href="" class="btn btn-comments">
-                    Comments ({{count($image->comments)}})
-                </a>
+               <div class="comments">
+                <h2>Comments ({{count($image->comments)}})</h2>
+                <hr>
+
+                <form action="{{route('comment.save')}}" method="POST">
+                @csrf
+
+                <input type="hidden" name="image_id" value="{{$image->id}}">
+                <p>
+                    <textarea class="form-control" name="content" required></textarea>
+                    @if($errors->has('content'))
+                      <span class="alert alert-danger" role="alert">
+                        <strong>{{$errors->first('content')}}</strong>
+                      </span>
+                    @endif
+                </p>
+                <button type="submit" class="btn btn-success">Send</button>
+                </form>
+               </div>
             </div>
         </div>
     </div>

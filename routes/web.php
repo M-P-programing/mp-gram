@@ -21,3 +21,4 @@ Route::get('/upload-image', 'ImageController@create')->name('image.create');
 Route::post('/image/save', 'ImageController@save')->name('image.save');
 Route::get('/user/file/{filename}', 'ImageController@getImage')->name('image.file');
 Route::get('/image/{id}', 'ImageController@detail')->name('image.detail');
+Route::post('/comment/save', 'CommentController@save')->name('comment.save');
