@@ -26,9 +26,7 @@
                     </a>
                     </div>
                 </div>
-                <div class="likes">
-                    <img src="{{asset('images/heart-grey.png')}}" alt="">
-                </div>
+               @include('includes.likes')
                 <div class="description">
                     <span class="nickname">{{'@'.$image->user->nick}}</span>
                     <span class="nickname date">{{' | ' . \FormatTime::LongTimeFilter($image->created_at)}}</span>

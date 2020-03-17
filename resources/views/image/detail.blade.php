@@ -23,9 +23,7 @@
                     <img src="{{ route('image.file', ['filename' => $image->image_path])}}" alt="">
                     </div>
                 </div>
-                <div class="likes">
-                    <img src="{{asset('images/heart-grey.png')}}" alt="">
-                </div>
+                @include('includes.likes')
                 <div class="description">
                     <span class="nickname">{{'@'.$image->user->nick}}</span>
                     <p>{{$image->description}}</p>
