@@ -77,3 +77,27 @@ form .avatar{
 .pub_image .comments{
     padding:20px;
 }
+
+.profile-user{
+    margin-bottom:40px;
+    height: 200px;
+}
+
+.profile-user .container-avatar{
+    width: 200px;
+    height: 200px;
+    border-radius: 900px;
+    overflow: hidden;
+    float: left;
+}
+
+.profile-user .container-avatar img{
+    width: 100%;
+    height: 100%;
+}
+
+.profile-user .user-info{
+    float: left;
+    padding-left: 30px;
+    padding-top:30px;
+}
