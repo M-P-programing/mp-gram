@@ -22,12 +22,19 @@
                     <div class="image-container image-detail">
                     <img src="{{ route('image.file', ['filename' => $image->image_path])}}" alt="">
                     </div>
+                    @if(Auth::user() && Auth::user()->id == $image->user->id)
+                <div class="actions">
+                    <a href="{{route('image.edit', ['id' => $image->id])}}" class="actions-edit">Edit</a>
+                    <a href="{{route('image.delete', ['id' => $image->id])}}" class="actions-delete">Delete</a>
+                </div>
+                @endif
                 </div>
                 @include('includes.likes')
                 <div class="description">
                     <span class="nickname">{{'@'.$image->user->nick}}</span>
                     <p>{{$image->description}}</p>
                 </div>
+                <div class="clearfix"></div>
                <div class="comments">
                 <h2>Comments ({{count($image->comments)}})</h2>
                 <hr>

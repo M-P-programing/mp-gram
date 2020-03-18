@@ -65,7 +65,7 @@ form .avatar{
     font-weight: 400;
 }
 .likes{
-    padding: 20px;
+    padding-left: 20px;
     padding-bottom:10px;
 }
 .likes img{
@@ -100,4 +100,31 @@ form .avatar{
     float: left;
     padding-left: 30px;
     padding-top:30px;
+}
+
+.actions{
+    padding-top:20px;
+    float: right;
+}
+
+.actions .actions-edit{
+    margin-right:20px;
+    background-color: #262121;
+    color: white;
+    padding: 5px;
+    border-radius: 25px;
+    width: 130px;
+    display: inline-block;
+    text-align: center;
+}
+
+.actions .actions-delete{
+    margin-right:20px;
+    background-color: red;
+    color: white;
+    padding: 5px;
+    border-radius: 25px;
+    width: 130px;
+    display: inline-block;
+    text-align: center;
 }
