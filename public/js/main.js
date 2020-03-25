@@ -47,4 +47,10 @@ window.addEventListener('load', function () {
 
   dislike();
 
+
+  // Buscador
+  $('#search-form').submit(function () {
+    $(this).attr('action', url + '/users/profiles/' + $('#search').val());
+  });
+
 });

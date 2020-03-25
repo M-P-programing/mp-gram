@@ -89,6 +89,12 @@
                                     </form>
                                 </div>
                             </li>
+                            <div>
+                                <form class="search-form-nav" action="{{route('user.index')}}" method="get" id="search-form">
+                                    <input type="text" id="search" class="search-nav form-control" placeholder="Find user">
+                                    <input type="submit" value="Search" class="btn btn-primary">
+                                </form>
+                            </div>
                         @endguest
                     </ul>
                 </div>

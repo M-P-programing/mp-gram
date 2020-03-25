@@ -128,3 +128,11 @@ form .avatar{
     display: inline-block;
     text-align: center;
 }
+
+.search-nav{
+    margin-left: 50px;
+}
+
+.search-form-nav{
+    display: flex;
+}
