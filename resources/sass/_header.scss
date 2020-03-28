@@ -1,0 +1,21 @@
+.navbar .container-avatar, 
+.pub_image .container-avatar{
+    width: 35px;
+    height: 35px;
+    border-radius: 900px;
+    overflow: hidden;
+    margin-left: 50px;
+}
+
+.search-form-nav{
+  display: flex;
+  .search-nav{
+    margin-left: 50px;
+  }
+}
+
+.navbar .container-avatar img,
+.pub_image .container-avatar img{
+    height: 100%;
+    width: 100%;
+}

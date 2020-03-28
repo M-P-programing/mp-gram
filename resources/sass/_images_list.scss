@@ -1,0 +1,64 @@
+.pub_image{
+  margin-bottom: 65px;
+  .container-avatar{
+    float: left;   
+  margin-right: 20px;
+  }
+  .data-user{
+    font-weight: 700;
+    line-height: 35px;
+  }
+  .nickname{
+    color: grey;
+  }
+  .image-container{
+    max-height: 400px;
+    overflow: hidden;
+    width: 100%;
+    img{
+      width: 100%;
+    }
+  }
+  .card-body{
+    padding: 0px;
+    .actions{
+      padding-top:20px;
+      float: right;
+      .actions-edit{
+        margin-right:20px;
+        background-color: #262121;
+        color: white;
+        padding: 5px;
+        border-radius: 25px;
+        width: 130px;
+        display: inline-block;
+        text-align: center;
+      }
+      .actions-delete{
+        margin-right:20px;
+        background-color: red;
+        color: white;
+        padding: 5px;
+        border-radius: 25px;
+        width: 130px;
+        display: inline-block;
+        text-align: center;
+      }
+    }
+  }
+  .description{
+    padding: 20px;
+    padding-top:0px;
+  }
+  .btn-comments{
+    background-color: #262121;
+    color: white;
+    font-weight: 400;
+  }
+  .image-detail{
+    max-height: 500px;
+  }
+  .comments{
+    padding:20px;
+  }
+}
