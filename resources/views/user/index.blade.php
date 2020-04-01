@@ -4,13 +4,16 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-
+    
         @foreach($users as $user)
+
         <div class="profile-user">
             @if($user->image)
+            <a href="{{route('profile', ['id' => $user->id])}}" class="">
                 <div class="container-avatar">
                     <img src="{{ route('user.avatar', [ 'filename'=>$user->image])}}" class="avatar">
                 </div>
+            </a>
             @endif
           <div class="user-info">
             <h2>{{'@' . $user->nick}}</h2>
@@ -20,6 +23,7 @@
             <a href="{{route('profile', ['id' => $user->id])}}" class="">See profile</a>
           </div>
         </div>
+
         <div class="clearfix"></div>
         @endforeach
              <!-- PAGINATION-->
